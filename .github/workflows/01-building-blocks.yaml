@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: say hello2
-        run: echo "Hello from job hello2, the project is building..."
+        run: echo "next is building..."
