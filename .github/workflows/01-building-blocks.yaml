@@ -21,7 +21,5 @@ jobs:
     needs: build
     steps:
       - name: Deployment
-        env:
-          BUILD_STATUS: ${{ needs.build.outputs.result }}
-          run: echo "Build Status: $BUILD_STATUS"
-
+        BUILD_STATUS: ${{ needs.build.outputs.result }}
+        run: echo "Build Status: $BUILD_STATUS"
