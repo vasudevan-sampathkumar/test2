@@ -1,7 +1,10 @@
 
 name: GitHub Actions Outputs Example
 
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -20,4 +23,5 @@ jobs:
       - name: Deployment
         env:
           BUILD_STATUS: ${{ needs.build.outputs.result }}
-        run: echo "Build Status: $BUILD_STATUS"
+          run: echo "Build Status: $BUILD_STATUS"
+
