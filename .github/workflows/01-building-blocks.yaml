@@ -1,16 +1,17 @@
-name: 01-building-blocks
-
-on: workflow_dispatch
-
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: say hello
-        run: echo "Building the project..."
+    - name: Build and Test
+      run: |
+        # Your build and test commands here
+        echo "Building and testing..."
 
-  hello2:
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: say hello2
-        run: echo "next is building..."
+    - name: Deploy to Staging
+      run: |
+        # Deployment steps for staging environment
+        echo "Deploying to staging..."
