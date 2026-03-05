@@ -1,3 +1,4 @@
+on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,3 +16,4 @@ jobs:
       run: |
         # Deployment steps for staging environment
         echo "Deploying to staging..."
+
