@@ -1,10 +1,7 @@
 
 name: GitHub Actions Outputs Example
 
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 
 jobs:
   build:
@@ -14,4 +11,4 @@ jobs:
     steps:
       - name: Build
         id: build
-        run: echo "result=success" >> "$GITHUB_OUTPUT"
+        run: echo "result=asdf" >> "$GITHUB_OUTPUT"
