@@ -1,14 +1,17 @@
+name: Input Example
 
-name: GitHub Actions Outputs Example
-
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Enter your name'
+        required: true
+        default: 'Vasudevan'
 
 jobs:
-  build:
+  print-input:
     runs-on: ubuntu-latest
-    outputs:
-      result: ${{ steps.build.outputs.result }}
+
     steps:
-      - name: Build
-        id: build
-        run: echo "result=asdf" >> "$GITHUB_OUTPUT"
+      - name: Print the input
+        run: echo "Hello ${{ github.event.inputs.name }}"
